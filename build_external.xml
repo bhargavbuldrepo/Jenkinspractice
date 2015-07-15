@@ -1,0 +1,25 @@
+<project name="test" default="test1">
+
+<taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
+	<!--<classpath>
+	 <pathelement location=""/>
+	</classpath>-->
+	<target name="test1">
+		<if>
+			<equals arg1="${ENV}" arg2="DEV"/>
+			<then>
+				<echo> Am inside the DEV block </echo>
+			</then>
+		</if>
+				<if>
+					<equals arg1="${ENV}" arg2="QA"/>
+						<then>
+							<echo> Am inside the QA block </echo>
+						</then>
+						<else>
+							<echo> AM inside the NON DEV NON QA </echo>
+						</else>
+				</if>
+		
+	</target>
+</project>

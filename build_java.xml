@@ -1,0 +1,33 @@
+<project name="Test" default="JavaTest">
+
+	<target name="JavaTest">
+		<echo>
+			Java related tasks
+		</echo>
+			<javac srcdir="src" destdir="build/classes"/>
+			<jar basedir="build/classes" destfile="build/jar/HelloWorld.jar">
+			
+				<manifest>
+					<attribute name="Main-Class" value="HelloWorld">
+				</manifest>
+			
+			</jar>
+			<!--<java jar="build/jar/HelloWorld.jar"/>
+			
+			C:\Ant_practice\build_java.xml:9: Cannot execute a jar in non-forked mode. Pleas
+e set fork='true'.-->
+
+			<java jar="build/jar/HelloWorld.jar" fork='true'/>
+			
+			   <!-- [javac] C:\Ant_practice\build_java.xml:7: warning: 'includeantruntime' was n
+ot set, defaulting to build.sysclasspath=last; set to false for repeatable build
+s
+     [java] no main manifest attribute, in C:\Ant_practice\build\jar\HelloWorld.
+jar
+     [java] Java Result: 1-->
+
+
+	</target>
+	
+</project>
+

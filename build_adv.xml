@@ -1,0 +1,12 @@
+<project name="test" default="test">
+	<target name="test">
+		<!--<zip basedir="build" destfile="build.zip"/>
+		<unzip src="build.zip" dest="src/unzipfile"/>
+		<exec os="Windows 8.1" executable="cmd.exe">
+			<arg line="/c notepad"/>
+		</exec>-->
+		
+		<echo> ant version is : ${ant.version} </echo>
+	</target>
+	
+</project>

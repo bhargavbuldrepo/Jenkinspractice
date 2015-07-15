@@ -1,0 +1,47 @@
+<project name="test" default="Main">
+
+	<property file="build.properties"/>
+		<target name="Main">
+			<antcall target="clean">
+				<param name="X" value="10"/>
+				<param name="Y" value="20"/>
+			</antcall>
+			<antcall target="Compile"/>
+			<antcall target="Package"/>
+			<antcall target="Run"/>
+		</target>
+	
+		<target name="clean">
+			<delete dir="${build_dir}"/>
+			<echo> X value is ${X} </echo>
+			<echo> Y value is ${Y} </echo>
+		</target>
+
+	<target name="Compile">
+		<echo>
+			Java related tasks
+		</echo>
+			<mkdir dir="${build_dir}/${class_dir}"/>
+			<javac srcdir="${src_dir}" destdir="${build_dir}/${class_dir}"/>
+	</target>
+	
+	<target name="Package">
+		<echo> Java Package Tasks </echo>
+		<echo> X value is ${X} </echo>
+			<jar basedir="${build_dir}/${class_dir}" destfile="${build_dir}/${jar_dir}/${filename}.jar">
+			
+				<manifest>
+					<attribute name="Main-Class" value="${filename}"/>
+				</manifest>
+			
+			</jar>
+	</target>	
+	
+	<target name="Run">
+		<echo> Running jar files tasks </echo>
+
+			<java jar="${build_dir}/jar/${filename}.jar" fork='true'/>
+		
+	</target>
+	
+</project>

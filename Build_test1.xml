@@ -1,0 +1,30 @@
+<project name="Test1" default="test">
+
+	<target name="test">
+		
+		<echo> File system tasks </echo>
+		<!--<mkdir dir="Buildclass/testone/testtwo"/>
+		<delete dir="Buildclass"/>  
+		<copy file="C:\Ant_practice\src\HelloWorld.java" tofile="C:\Ant_practice\hello.java"/>
+		<copy file="C:\Ant_practice\src\HelloWorld.java" todir="C:\Ant_practice\hellodircopy.java"/>
+		
+	<copy todir="build">
+		<fileset dir="src"/>
+	</copy>
+	</target>
+	
+	<copy todir="build">
+		<fileset dir="src">
+		<include name="*.java"/>
+		</fileset>
+	</copy>-->
+	
+	<copy todir="build">
+		<fileset dir="src">
+		<include name="**/*.txt"/>
+		</fileset>
+	</copy>
+	</target>
+	
+	
+</project>
